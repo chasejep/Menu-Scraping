@@ -1026,19 +1026,18 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "61220876-549f-403e-b9a9-cc3c8ae31513",
 								"exec": [
-									"// Parse the response JSON",
+									"// Reset Leafly variables and set the Product Count",
 									"let response = pm.response.json();",
-									"",
-									"// Access the id",
 									"let productCount = response.metadata.totalCount;",
-									"",
-									"// Set the collection variable",
-									"pm.collectionVariables.set(\"leafly_productCount\", productCount);"
+									"pm.collectionVariables.set(\"leafly_totalProductCount\", productCount);",
+									"pm.collectionVariables.set(\"leafly_remainingProductCount\", productCount);",
+									"pm.collectionVariables.set('leafly_collectionResponses', JSON.stringify([]));",
+									"let responses = pm.collectionVariables.get('leafly_collectionResponses');"
 								],
 								"type": "text/javascript",
-								"packages": {},
-								"id": "61220876-549f-403e-b9a9-cc3c8ae31513"
+								"packages": {}
 							}
 						}
 					],
@@ -1115,7 +1114,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://consumer-api.leafly.com/api/dispensaries/v2/{{leafly_slug}}/menu_items?take=60&skip=0&sort[0][menu_item_name]=asc",
+							"raw": "https://consumer-api.leafly.com/api/dispensaries/v2/{{leafly_slug}}/menu_items?take=1&skip=0&sort[0][menu_item_name]=asc",
 							"protocol": "https",
 							"host": [
 								"consumer-api",
@@ -1132,7 +1131,7 @@
 							"query": [
 								{
 									"key": "take",
-									"value": "60"
+									"value": "1"
 								},
 								{
 									"key": "skip",
@@ -1575,7 +1574,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "e85aa108-b988-4e17-a4e0-5686fc19bdb0",
+				"id": "57474ffd-778e-4e64-8876-16dd63effa35",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1586,7 +1585,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "6d26faae-d4d1-4be3-8f6a-032de753d8ee",
+				"id": "c9bc157a-66ae-4366-8727-2fe0341a192d",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1616,7 +1615,7 @@
 			"type": "string"
 		},
 		{
-			"key": "leafly_productCount",
+			"key": "leafly_totalProductCount",
 			"value": "",
 			"type": "string"
 		},
