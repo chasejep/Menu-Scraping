@@ -2821,33 +2821,30 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "7cd7726c-baa0-45ae-b10e-d1b5a30199eb",
 								"exec": [
-									"",
-									"// Save the Weedmaps Product Count",
+									"// Reset Weedmaps variables and set the Product Count",
 									"let response = pm.response.json();",
 									"let productCount = response.meta.total_menu_items;",
+									"pm.collectionVariables.set(\"weedmaps_currentPage\", 1);",
 									"pm.collectionVariables.set(\"weedmaps_totalProductCount\", productCount);",
 									"pm.collectionVariables.set(\"weedmaps_remainingProductCount\", productCount);",
-									"pm.collectionVariables.set(\"weedmaps_currentPage\", 1);",
-									"",
-									"// Reset weedmaps_collectionResponses variable",
 									"pm.collectionVariables.set('weedmaps_collectionResponses', JSON.stringify([]));",
 									"let responses = pm.collectionVariables.get('weedmaps_collectionResponses');"
 								],
 								"type": "text/javascript",
-								"packages": {},
-								"id": "7cd7726c-baa0-45ae-b10e-d1b5a30199eb"
+								"packages": {}
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "5814f2a8-92f5-4d5a-8e6b-43b0be9e462d",
 								"exec": [
 									""
 								],
 								"type": "text/javascript",
-								"packages": {},
-								"id": "5814f2a8-92f5-4d5a-8e6b-43b0be9e462d"
+								"packages": {}
 							}
 						}
 					],
@@ -3127,7 +3124,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "000414bc-e037-46eb-ba99-640b33738957",
+				"id": "d6f03199-6f62-4c86-8db6-2f0f93bc15e2",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -3138,7 +3135,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "6a25d3f2-a95f-4627-a0af-54aa1040895d",
+				"id": "724123aa-6e6b-443d-8ebd-40588e40cddb",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
