@@ -1194,7 +1194,16 @@
 									"let remainingProductCount = pm.collectionVariables.get('leafly_remainingProductCount');",
 									"if (remainingProductCount <= 0) {",
 									"    throw new Error(\"No more products to fetch. Stopping request execution.\");",
-									"}"
+									"}",
+									"",
+									"// Get leafly_skipCount",
+									"let skipCount = pm.collectionVariables.get('leafly_skipCount');",
+									"if (!skipCount) {",
+									"    skipCount = 0;",
+									"} else {",
+									"    console.log(skipCount+60);",
+									"}",
+									"pm.collectionVariables.set('leafly_skipCount', skipCount);"
 								],
 								"type": "text/javascript",
 								"packages": {}
