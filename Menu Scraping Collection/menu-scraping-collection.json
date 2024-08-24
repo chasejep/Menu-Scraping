@@ -1158,7 +1158,7 @@
 								"exec": [
 									"// Update leafly_remainingProductCount",
 									"let remainingProductCount = pm.collectionVariables.get('leafly_remainingProductCount');",
-									"let newRemainingProductCount = remainingProductCount - pageSize;",
+									"let newRemainingProductCount = remainingProductCount - 60;",
 									"newRemainingProductCount = newRemainingProductCount < 0 ? 0 : newRemainingProductCount;",
 									"pm.collectionVariables.set('leafly_remainingProductCount', newRemainingProductCount);",
 									"",
@@ -1614,7 +1614,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "ae84efdb-7658-41b8-98df-95f31dbb8d9c",
+				"id": "b0df0e8a-14e7-429e-ae07-9c1fd5cf22cf",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1625,7 +1625,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "0d33d910-b4c3-412a-a8e3-3339d8b4b4c1",
+				"id": "31f9bdb5-e931-457a-a30a-724d69f1b878",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1666,7 +1666,7 @@
 		},
 		{
 			"key": "leafly_skipCount",
-			"value": "0",
+			"value": "",
 			"type": "string"
 		},
 		{
