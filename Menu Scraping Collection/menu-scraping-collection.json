@@ -1201,7 +1201,7 @@
 									"if (!skipCount) {",
 									"    skipCount = 0;",
 									"} else {",
-									"    console.log(skipCount+60);",
+									"    skipCount += 60; // Increment the skip count by 60",
 									"}",
 									"pm.collectionVariables.set('leafly_skipCount', skipCount);"
 								],
