@@ -1153,6 +1153,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "61220876-549f-403e-b9a9-cc3c8ae31513",
 								"exec": [
 									"// Parse the response JSON",
 									"let response = pm.response.json();",
@@ -1164,8 +1165,31 @@
 									"pm.collectionVariables.set(\"leafly_productCount\", productCount);"
 								],
 								"type": "text/javascript",
-								"packages": {},
-								"id": "61220876-549f-403e-b9a9-cc3c8ae31513"
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "5809e60b-b963-48dc-b9e1-a21daece248a",
+								"exec": [
+									"// Get the leafly_remainingProductCount",
+									"let remainingProductCount = pm.collectionVariables.get('leafly_remainingProductCount');",
+									"if (remainingProductCount <= 0) {",
+									"    throw new Error(\"No more products to fetch. Stopping request execution.\");",
+									"}",
+									"",
+									"// Get leafly_currentPage",
+									"let currentPage = pm.collectionVariables.get('leafly_currentPage');",
+									"if (!currentPage) {",
+									"    currentPage = 1;",
+									"} else {",
+									"    currentPage++;",
+									"}",
+									"pm.collectionVariables.set('leafly_currentPage', currentPage);"
+								],
+								"type": "text/javascript",
+								"packages": {}
 							}
 						}
 					],
@@ -1574,7 +1598,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "57474ffd-778e-4e64-8876-16dd63effa35",
+				"id": "f5413dd3-1a5d-449d-a860-70d9fa94732f",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1585,7 +1609,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "c9bc157a-66ae-4366-8727-2fe0341a192d",
+				"id": "6f12f9c5-c464-420b-8ae0-9761cd07699a",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1616,6 +1640,21 @@
 		},
 		{
 			"key": "leafly_totalProductCount",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "leafly_remainingProductCount",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "leafly_pageSize",
+			"value": "60",
+			"type": "string"
+		},
+		{
+			"key": "leafly_collectionResponses",
 			"value": "",
 			"type": "string"
 		},
