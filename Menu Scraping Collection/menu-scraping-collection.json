@@ -1156,14 +1156,30 @@
 							"script": {
 								"id": "61220876-549f-403e-b9a9-cc3c8ae31513",
 								"exec": [
-									"// Parse the response JSON",
-									"let response = pm.response.json();",
+									"// Update leafly_remainingProductCount",
+									"let pageSize = pm.collectionVariables.get('leafly_pageSize');",
+									"let remainingProductCount = pm.collectionVariables.get('leafly_remainingProductCount');",
+									"let newRemainingProductCount = remainingProductCount - pageSize;",
+									"newRemainingProductCount = newRemainingProductCount < 0 ? 0 : newRemainingProductCount;",
+									"pm.collectionVariables.set('leafly_remainingProductCount', newRemainingProductCount);",
 									"",
-									"// Access the id",
-									"let productCount = response.metadata.totalCount;",
+									"// Add response to leaflys_collectionResponses variable",
+									"let responses = pm.collectionVariables.get('leafly_collectionResponses');",
+									"if(responses) {",
+									"  responses = JSON.parse(responses);",
+									"} else {",
+									"  responses = [];",
+									"}",
+									"responses.push(pm.response.json());",
+									"pm.collectionVariables.set('leafly_collectionResponses', JSON.stringify(responses));",
 									"",
-									"// Set the collection variable",
-									"pm.collectionVariables.set(\"leafly_productCount\", productCount);"
+									"// Set next request",
+									"if (newRemainingProductCount > 0) {",
+									"    pm.execution.setNextRequest(\"Leafly Menu Products\");",
+									"} else {",
+									"    console.log(\"All products have been fetched.\");",
+									"    pm.execution.setNextRequest(null); // Stop further requests",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -1178,16 +1194,7 @@
 									"let remainingProductCount = pm.collectionVariables.get('leafly_remainingProductCount');",
 									"if (remainingProductCount <= 0) {",
 									"    throw new Error(\"No more products to fetch. Stopping request execution.\");",
-									"}",
-									"",
-									"// Get leafly_currentPage",
-									"let currentPage = pm.collectionVariables.get('leafly_currentPage');",
-									"if (!currentPage) {",
-									"    currentPage = 1;",
-									"} else {",
-									"    currentPage++;",
-									"}",
-									"pm.collectionVariables.set('leafly_currentPage', currentPage);"
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -1267,7 +1274,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://consumer-api.leafly.com/api/dispensaries/v2/{{leafly_slug}}/menu_items?take={{leafly_pageSize}}&skip=0&sort[0][menu_item_name]=asc",
+							"raw": "https://consumer-api.leafly.com/api/dispensaries/v2/{{leafly_slug}}/menu_items?take={{leafly_pageSize}}&skip={{leafly_skipCount}}&sort[0][menu_item_name]=asc",
 							"protocol": "https",
 							"host": [
 								"consumer-api",
@@ -1288,7 +1295,7 @@
 								},
 								{
 									"key": "skip",
-									"value": "0"
+									"value": "{{leafly_skipCount}}"
 								},
 								{
 									"key": "sort[0][menu_item_name]",
@@ -1460,7 +1467,7 @@
 									"",
 									"// Set next request",
 									"if (newRemainingProductCount > 0) {",
-									"    pm.execution.setNextRequest(\"Menu Products\");",
+									"    pm.execution.setNextRequest(\"Weedmaps Menu Products\");",
 									"} else {",
 									"    console.log(\"All products have been fetched.\");",
 									"    pm.execution.setNextRequest(null); // Stop further requests",
