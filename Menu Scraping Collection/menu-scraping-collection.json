@@ -1157,7 +1157,6 @@
 								"id": "61220876-549f-403e-b9a9-cc3c8ae31513",
 								"exec": [
 									"// Update leafly_remainingProductCount",
-									"let pageSize = pm.collectionVariables.get('leafly_pageSize');",
 									"let remainingProductCount = pm.collectionVariables.get('leafly_remainingProductCount');",
 									"let newRemainingProductCount = remainingProductCount - pageSize;",
 									"newRemainingProductCount = newRemainingProductCount < 0 ? 0 : newRemainingProductCount;",
@@ -1283,7 +1282,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://consumer-api.leafly.com/api/dispensaries/v2/{{leafly_slug}}/menu_items?take={{leafly_pageSize}}&skip={{leafly_skipCount}}&sort[0][menu_item_name]=asc",
+							"raw": "https://consumer-api.leafly.com/api/dispensaries/v2/{{leafly_slug}}/menu_items?take=60&skip={{leafly_skipCount}}&sort[0][menu_item_name]=asc",
 							"protocol": "https",
 							"host": [
 								"consumer-api",
@@ -1300,7 +1299,7 @@
 							"query": [
 								{
 									"key": "take",
-									"value": "{{leafly_pageSize}}"
+									"value": "60"
 								},
 								{
 									"key": "skip",
@@ -1615,7 +1614,7 @@
 		{
 			"listen": "prerequest",
 			"script": {
-				"id": "63f1655a-a8ae-4a39-8931-561a5d4f9427",
+				"id": "ae84efdb-7658-41b8-98df-95f31dbb8d9c",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1626,7 +1625,7 @@
 		{
 			"listen": "test",
 			"script": {
-				"id": "b177c801-d96e-44c1-8f13-6825c3b0523e",
+				"id": "0d33d910-b4c3-412a-a8e3-3339d8b4b4c1",
 				"type": "text/javascript",
 				"packages": {},
 				"exec": [
@@ -1663,11 +1662,6 @@
 		{
 			"key": "leafly_remainingProductCount",
 			"value": "",
-			"type": "string"
-		},
-		{
-			"key": "leafly_pageSize",
-			"value": "60",
 			"type": "string"
 		},
 		{
