@@ -2949,6 +2949,7 @@
 						{
 							"listen": "test",
 							"script": {
+								"id": "03e6155f-299e-45a3-b41a-440b9c3f5bac",
 								"exec": [
 									"// Get the page size from the collection variables",
 									"let pageSize = pm.collectionVariables.get('weedmaps_pageSize');",
@@ -2980,44 +2981,31 @@
 									""
 								],
 								"type": "text/javascript",
-								"packages": {},
-								"id": "03e6155f-299e-45a3-b41a-440b9c3f5bac"
+								"packages": {}
 							}
 						},
 						{
 							"listen": "prerequest",
 							"script": {
+								"id": "f42c77ad-da70-46b0-b1f9-7dd5e5fe006e",
 								"exec": [
-									"// Get the remaining product count from the collection variables",
+									"// Get the weedmaps_remainingProductCount",
 									"let remainingProductCount = pm.collectionVariables.get('weedmaps_remainingProductCount');",
-									"",
-									"// Check if the remaining product count is 0",
 									"if (remainingProductCount <= 0) {",
-									"    // Stop the loop by throwing an error (optional to stop the loop cleanly)",
 									"    throw new Error(\"No more products to fetch. Stopping request execution.\");",
 									"}",
 									"",
-									"// Get the current page number",
+									"// Get weedmaps_currentPage",
 									"let currentPage = pm.collectionVariables.get('weedmaps_currentPage');",
-									"",
-									"// If currentPage is not set, initialize it to 1",
 									"if (!currentPage) {",
 									"    currentPage = 1;",
 									"} else {",
-									"    // Increment the page number for the next request",
 									"    currentPage++;",
 									"}",
-									"",
-									"// Set the updated page number back to the collection variable",
-									"pm.collectionVariables.set('weedmaps_currentPage', currentPage);",
-									"",
-									"// Log the page number for debugging",
-									"console.log(`Requesting page number: ${currentPage}`);",
-									""
+									"pm.collectionVariables.set('weedmaps_currentPage', currentPage);"
 								],
 								"type": "text/javascript",
-								"packages": {},
-								"id": "f42c77ad-da70-46b0-b1f9-7dd5e5fe006e"
+								"packages": {}
 							}
 						}
 					],
