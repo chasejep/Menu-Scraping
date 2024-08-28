@@ -16,6 +16,22 @@
 							"script": {
 								"id": "2f4bd5db-3ef8-4711-bc4c-8aff3da55922",
 								"exec": [
+									"// Reset Menu Scraping Variables",
+									"pm.collectionVariables.set(\"dutchie_org_id\", );",
+									"pm.collectionVariables.set(\"dutchie_currentPage\", );",
+									"pm.collectionVariables.set(\"dutchie_remainingProductCount\", );",
+									"pm.collectionVariables.set(\"dutchie_totalProductCount\", );",
+									"pm.collectionVariables.set(\"dutchie_collectionResponses\", );",
+									"pm.collectionVariables.set(\"meadow_collectionResponses\", );",
+									"pm.collectionVariables.set(\"leafly_totalProductCount\", );",
+									"pm.collectionVariables.set(\"leafly_remainingProductCount\", );",
+									"pm.collectionVariables.set(\"leafly_skipCount\", );",
+									"pm.collectionVariables.set(\"leafly_collectionResponses\", );",
+									"pm.collectionVariables.set(\"weedmaps_totalProductCount\", );",
+									"pm.collectionVariables.set(\"weedmaps_remainingProductCount\", );",
+									"pm.collectionVariables.set(\"weedmaps_currentPage\", );",
+									"pm.collectionVariables.set(\"weedmaps_collectionResponses\", );",
+									"",
 									"// Get dutchie_Org_ID",
 									"let response = pm.response.json();",
 									"let dispensaryId = response.data.filteredDispensaries[0].id;",
@@ -394,6 +410,22 @@
 							"script": {
 								"id": "0264279f-8dd1-47c4-94e3-206323e10d51",
 								"exec": [
+									"// Reset Menu Scraping Variables",
+									"pm.collectionVariables.set(\"dutchie_org_id\", );",
+									"pm.collectionVariables.set(\"dutchie_currentPage\", );",
+									"pm.collectionVariables.set(\"dutchie_remainingProductCount\", );",
+									"pm.collectionVariables.set(\"dutchie_totalProductCount\", );",
+									"pm.collectionVariables.set(\"dutchie_collectionResponses\", );",
+									"pm.collectionVariables.set(\"meadow_collectionResponses\", );",
+									"pm.collectionVariables.set(\"leafly_totalProductCount\", );",
+									"pm.collectionVariables.set(\"leafly_remainingProductCount\", );",
+									"pm.collectionVariables.set(\"leafly_skipCount\", );",
+									"pm.collectionVariables.set(\"leafly_collectionResponses\", );",
+									"pm.collectionVariables.set(\"weedmaps_totalProductCount\", );",
+									"pm.collectionVariables.set(\"weedmaps_remainingProductCount\", );",
+									"pm.collectionVariables.set(\"weedmaps_currentPage\", );",
+									"pm.collectionVariables.set(\"weedmaps_collectionResponses\", );",
+									"",
 									"// Add response to leaflys_collectionResponses variable",
 									"let responses = pm.collectionVariables.get('meadow_collectionResponses');",
 									"if(responses) {",
@@ -484,6 +516,22 @@
 							"script": {
 								"id": "61220876-549f-403e-b9a9-cc3c8ae31513",
 								"exec": [
+									"// Reset Menu Scraping Variables",
+									"pm.collectionVariables.set(\"dutchie_org_id\", );",
+									"pm.collectionVariables.set(\"dutchie_currentPage\", );",
+									"pm.collectionVariables.set(\"dutchie_remainingProductCount\", );",
+									"pm.collectionVariables.set(\"dutchie_totalProductCount\", );",
+									"pm.collectionVariables.set(\"dutchie_collectionResponses\", );",
+									"pm.collectionVariables.set(\"meadow_collectionResponses\", );",
+									"pm.collectionVariables.set(\"leafly_totalProductCount\", );",
+									"pm.collectionVariables.set(\"leafly_remainingProductCount\", );",
+									"pm.collectionVariables.set(\"leafly_skipCount\", );",
+									"pm.collectionVariables.set(\"leafly_collectionResponses\", );",
+									"pm.collectionVariables.set(\"weedmaps_totalProductCount\", );",
+									"pm.collectionVariables.set(\"weedmaps_remainingProductCount\", );",
+									"pm.collectionVariables.set(\"weedmaps_currentPage\", );",
+									"pm.collectionVariables.set(\"weedmaps_collectionResponses\", );",
+									"",
 									"// Reset Leafly variables and set the Product Count",
 									"let response = pm.response.json();",
 									"let productCount = response.metadata.totalCount;",
@@ -785,6 +833,22 @@
 							"script": {
 								"id": "7cd7726c-baa0-45ae-b10e-d1b5a30199eb",
 								"exec": [
+									"// Reset Menu Scraping Variables",
+									"pm.collectionVariables.set(\"dutchie_org_id\", );",
+									"pm.collectionVariables.set(\"dutchie_currentPage\", );",
+									"pm.collectionVariables.set(\"dutchie_remainingProductCount\", );",
+									"pm.collectionVariables.set(\"dutchie_totalProductCount\", );",
+									"pm.collectionVariables.set(\"dutchie_collectionResponses\", );",
+									"pm.collectionVariables.set(\"meadow_collectionResponses\", );",
+									"pm.collectionVariables.set(\"leafly_totalProductCount\", );",
+									"pm.collectionVariables.set(\"leafly_remainingProductCount\", );",
+									"pm.collectionVariables.set(\"leafly_skipCount\", );",
+									"pm.collectionVariables.set(\"leafly_collectionResponses\", );",
+									"pm.collectionVariables.set(\"weedmaps_totalProductCount\", );",
+									"pm.collectionVariables.set(\"weedmaps_remainingProductCount\", );",
+									"pm.collectionVariables.set(\"weedmaps_currentPage\", );",
+									"pm.collectionVariables.set(\"weedmaps_collectionResponses\", );",
+									"",
 									"// Reset Weedmaps variables and set the Product Count",
 									"let response = pm.response.json();",
 									"let productCount = response.meta.total_menu_items;",
@@ -1065,46 +1129,6 @@
 				}
 			],
 			"id": "66df2b04-de63-483f-aa4f-bb3d7869c730"
-		},
-		{
-			"name": "Reset Variables",
-			"event": [
-				{
-					"listen": "test",
-					"script": {
-						"id": "2f4bd5db-3ef8-4711-bc4c-8aff3da55922",
-						"exec": [
-							"// Reset Menu Scraping Variables",
-							"pm.collectionVariables.set(\"dutchie_org_id\", );",
-							"pm.collectionVariables.set(\"dutchie_currentPage\", );",
-							"pm.collectionVariables.set(\"dutchie_remainingProductCount\", );",
-							"pm.collectionVariables.set(\"dutchie_totalProductCount\", );",
-							"pm.collectionVariables.set(\"dutchie_collectionResponses\", );",
-							"pm.collectionVariables.set(\"meadow_collectionResponses\", );",
-							"pm.collectionVariables.set(\"leafly_totalProductCount\", );",
-							"pm.collectionVariables.set(\"leafly_remainingProductCount\", );",
-							"pm.collectionVariables.set(\"leafly_skipCount\", );",
-							"pm.collectionVariables.set(\"leafly_collectionResponses\", );",
-							"pm.collectionVariables.set(\"weedmaps_totalProductCount\", );",
-							"pm.collectionVariables.set(\"weedmaps_currentPage\", );",
-							"pm.collectionVariables.set(\"weedmaps_collectionResponses\", );"
-						],
-						"type": "text/javascript",
-						"packages": {}
-					}
-				}
-			],
-			"id": "a34ed890-9365-4771-a948-a0624ec6fe7c",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": "postman-echo.com/get",
-				"description": "Generated from cURL: curl 'https://dutchie.com/graphql?operationName=ConsumerDispensaries&variables=%7B%22dispensaryFilter%22%3A%7B%22cNameOrID%22%3A%22the-healing-center1%22%7D%7D&extensions=%7B%22persistedQuery%22%3A%7B%22version%22%3A1%2C%22sha256Hash%22%3A%2210f05353272bab0f3ceeff818feef0a05745241316be3a5eb9f3e66ca927a40d%22%7D%7D' \\\n  -H 'accept: */*' \\\n  -H 'accept-language: en-US,en;q=0.9' \\\n  -H 'apollographql-client-name: Marketplace (production)' \\\n  -H 'content-type: application/json' \\\n  -H 'cookie: __zlcmid=1KZmXM7P7EUbthu; next-i18next=en; dsid=03e5ff35-18f6-4e1f-8a92-86e85fde831a; amp_def7c4=_5oG4FX0pU5Lytyv7i1fpS...1i2sd8d3u.1i2sd8np0.13.0.13; __cflb=04dToaXWHAPESU8RyBQBc8Yta2dmM5dQ81GjbcKBaP' \\\n  -H 'if-none-match: W/\"75d3-CNdPDEOyoD86d79NRBisUX+JZKo\"' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://dutchie.com/embedded-menu/the-healing-center1/products' \\\n  -H 'sec-ch-ua: \"Not)A;Brand\";v=\"99\", \"Google Chrome\";v=\"127\", \"Chromium\";v=\"127\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-origin' \\\n  -H 'url: https://dutchie.com/embedded-menu/the-healing-center1/products' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0.0.0 Safari/537.36' \\\n  -H 'x-dutchie-session: session=eyJpZCI6IjhhNWYwYjdlLTcyNmUtNDk3ZC05NmZlLTQ1MjExMmExYzE4MSIsImV4cGlyZXMiOjE3MjQ4NzE1Mjg4NjN9;session_sig=oWJ-hPLuhPIQ_jCAIhPL0tfizG0'"
-			},
-			"response": []
 		}
 	],
 	"event": [
