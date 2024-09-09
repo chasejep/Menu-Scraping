@@ -1212,7 +1212,7 @@
 					}
 				],
 				"url": {
-					"raw": "https://api-g.weedmaps.com/discovery/v1/products?latlng=33.91733%2C-118.35368&filter%5Bbounding_radius%5D=50mi&include%5B%5D=facets.categories&limit=1",
+					"raw": "https://api-g.weedmaps.com/discovery/v1/listings/dispensaries/greenleaf-wellness/menu_items?page=1&page_size=150",
 					"protocol": "https",
 					"host": [
 						"api-g",
@@ -1222,24 +1222,19 @@
 					"path": [
 						"discovery",
 						"v1",
-						"products"
+						"listings",
+						"dispensaries",
+						"greenleaf-wellness",
+						"menu_items"
 					],
 					"query": [
 						{
-							"key": "latlng",
-							"value": "33.91733%2C-118.35368"
-						},
-						{
-							"key": "filter%5Bbounding_radius%5D",
-							"value": "50mi"
-						},
-						{
-							"key": "include%5B%5D",
-							"value": "facets.categories"
-						},
-						{
-							"key": "limit",
+							"key": "page",
 							"value": "1"
+						},
+						{
+							"key": "page_size",
+							"value": "150"
 						}
 					]
 				},
