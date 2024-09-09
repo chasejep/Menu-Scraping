@@ -1142,8 +1142,8 @@
 			"id": "66df2b04-de63-483f-aa4f-bb3d7869c730"
 		},
 		{
-			"name": "https://daffodil.getmeadow.com/organizations/849/products?includeProductMeta=true&source=web-embed",
-			"id": "0ae899b9-294b-4941-b563-c7dae3161118",
+			"name": "https://api-g.weedmaps.com/discovery/v1/products?latlng=33.91733%2C-118.35368&filter%5Bbounding_radius%5D=50mi&include%5B%5D=facets.categories&limit=1",
+			"id": "dc74fe67-b064-4828-8a86-4aae2101e187",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -1151,40 +1151,24 @@
 				"method": "GET",
 				"header": [
 					{
-						"key": "Accept",
-						"value": "application/vnd.meadow+json; version=2"
+						"key": "accept",
+						"value": "*/*, application/json"
 					},
 					{
-						"key": "Accept-Language",
+						"key": "accept-language",
 						"value": "en-US,en;q=0.9"
 					},
 					{
-						"key": "Connection",
-						"value": "keep-alive"
+						"key": "origin",
+						"value": "https://weedmaps.com"
 					},
 					{
-						"key": "Origin",
-						"value": "https://embed.getmeadow.com"
+						"key": "priority",
+						"value": "u=1, i"
 					},
 					{
-						"key": "Referer",
-						"value": "https://embed.getmeadow.com/"
-					},
-					{
-						"key": "Sec-Fetch-Dest",
-						"value": "empty"
-					},
-					{
-						"key": "Sec-Fetch-Mode",
-						"value": "cors"
-					},
-					{
-						"key": "Sec-Fetch-Site",
-						"value": "same-site"
-					},
-					{
-						"key": "User-Agent",
-						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+						"key": "referer",
+						"value": "https://weedmaps.com/"
 					},
 					{
 						"key": "sec-ch-ua",
@@ -1197,10 +1181,69 @@
 					{
 						"key": "sec-ch-ua-platform",
 						"value": "\"macOS\""
+					},
+					{
+						"key": "sec-fetch-dest",
+						"value": "empty"
+					},
+					{
+						"key": "sec-fetch-mode",
+						"value": "cors"
+					},
+					{
+						"key": "sec-fetch-site",
+						"value": "same-site"
+					},
+					{
+						"key": "user-agent",
+						"value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36"
+					},
+					{
+						"key": "wm-anonymous-user-id",
+						"value": "a5fe41b3-44c4-4a71-9518-ec420fb23e6d"
+					},
+					{
+						"key": "wm-user-latlng",
+						"value": "33.91733,-118.35368"
+					},
+					{
+						"key": "x-px-cookies",
+						"value": "_px2=eyJ1IjoiNDMwZjM2YjAtNmVmOC0xMWVmLTkyYmQtMDU2MWIyY2NiMmQ0IiwidiI6ImMzODM3YmZjLWNhMmYtMTFlZS04NWRjLTA1YTlhYmYwMGIxZSIsInQiOjE3MjU5MjA2MzE2NjUsImgiOiI3NWRhMTFjNDUxMzA0M2I4ZTkyYTljZjM5ODcwNWUzZTVhN2FjMmQ3ZjljNDM2MDk5MTQ5YTRiNThmODgwZDE4In0="
 					}
 				],
-				"url": "https://daffodil.getmeadow.com/organizations/849/products",
-				"description": "Generated from cURL: curl 'https://daffodil.getmeadow.com/organizations/849/products?includeProductMeta=true&source=web-embed' \\\n  -H 'Accept: application/vnd.meadow+json; version=2' \\\n  -H 'Accept-Language: en-US,en;q=0.9' \\\n  -H 'Connection: keep-alive' \\\n  -H 'Origin: https://embed.getmeadow.com' \\\n  -H 'Referer: https://embed.getmeadow.com/' \\\n  -H 'Sec-Fetch-Dest: empty' \\\n  -H 'Sec-Fetch-Mode: cors' \\\n  -H 'Sec-Fetch-Site: same-site' \\\n  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \\\n  -H 'sec-ch-ua: \"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"'"
+				"url": {
+					"raw": "https://api-g.weedmaps.com/discovery/v1/products?latlng=33.91733%2C-118.35368&filter%5Bbounding_radius%5D=50mi&include%5B%5D=facets.categories&limit=1",
+					"protocol": "https",
+					"host": [
+						"api-g",
+						"weedmaps",
+						"com"
+					],
+					"path": [
+						"discovery",
+						"v1",
+						"products"
+					],
+					"query": [
+						{
+							"key": "latlng",
+							"value": "33.91733%2C-118.35368"
+						},
+						{
+							"key": "filter%5Bbounding_radius%5D",
+							"value": "50mi"
+						},
+						{
+							"key": "include%5B%5D",
+							"value": "facets.categories"
+						},
+						{
+							"key": "limit",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl 'https://api-g.weedmaps.com/discovery/v1/products?latlng=33.91733%2C-118.35368&filter%5Bbounding_radius%5D=50mi&include%5B%5D=facets.categories&limit=1' \\\n  -H 'accept: */*, application/json' \\\n  -H 'accept-language: en-US,en;q=0.9' \\\n  -H 'origin: https://weedmaps.com' \\\n  -H 'priority: u=1, i' \\\n  -H 'referer: https://weedmaps.com/' \\\n  -H 'sec-ch-ua: \"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"' \\\n  -H 'sec-ch-ua-mobile: ?0' \\\n  -H 'sec-ch-ua-platform: \"macOS\"' \\\n  -H 'sec-fetch-dest: empty' \\\n  -H 'sec-fetch-mode: cors' \\\n  -H 'sec-fetch-site: same-site' \\\n  -H 'user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36' \\\n  -H 'wm-anonymous-user-id: a5fe41b3-44c4-4a71-9518-ec420fb23e6d' \\\n  -H 'wm-user-latlng: 33.91733,-118.35368' \\\n  -H 'x-px-cookies: _px2=eyJ1IjoiNDMwZjM2YjAtNmVmOC0xMWVmLTkyYmQtMDU2MWIyY2NiMmQ0IiwidiI6ImMzODM3YmZjLWNhMmYtMTFlZS04NWRjLTA1YTlhYmYwMGIxZSIsInQiOjE3MjU5MjA2MzE2NjUsImgiOiI3NWRhMTFjNDUxMzA0M2I4ZTkyYTljZjM5ODcwNWUzZTVhN2FjMmQ3ZjljNDM2MDk5MTQ5YTRiNThmODgwZDE4In0='"
 			},
 			"response": []
 		}
