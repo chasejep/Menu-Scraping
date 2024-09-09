@@ -416,7 +416,6 @@
 									"pm.collectionVariables.set(\"dutchie_remainingProductCount\", );",
 									"pm.collectionVariables.set(\"dutchie_totalProductCount\", );",
 									"pm.collectionVariables.set(\"dutchie_collectionResponses\", );",
-									"pm.collectionVariables.set(\"meadow_collectionResponses\", );",
 									"pm.collectionVariables.set(\"leafly_totalProductCount\", );",
 									"pm.collectionVariables.set(\"leafly_remainingProductCount\", );",
 									"pm.collectionVariables.set(\"leafly_skipCount\", );",
@@ -435,6 +434,18 @@
 									"}",
 									"responses.push(pm.response.json());",
 									"pm.collectionVariables.set('meadow_collectionResponses', JSON.stringify(responses));"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"id": "7d418ed0-f608-4607-87dd-23e3c5f86226",
+								"exec": [
+									"// Reset Menu Scraping Variables",
+									"pm.collectionVariables.set(\"meadow_collectionResponses\", );"
 								],
 								"type": "text/javascript",
 								"packages": {}
