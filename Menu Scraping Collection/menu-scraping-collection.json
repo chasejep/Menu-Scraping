@@ -673,9 +673,11 @@
 								"exec": [
 									"// Update leafly_remainingProductCount",
 									"let remainingProductCount = pm.collectionVariables.get('leafly_remainingProductCount');",
+									"remainingProductCount = parseInt(remainingProductCount);",
 									"let newRemainingProductCount = remainingProductCount - 60;",
 									"newRemainingProductCount = newRemainingProductCount < 0 ? 0 : newRemainingProductCount;",
 									"pm.collectionVariables.set('leafly_remainingProductCount', newRemainingProductCount);",
+									"",
 									"",
 									"// Add response to leaflys_collectionResponses variable",
 									"let responses = pm.collectionVariables.get('leafly_collectionResponses');",
