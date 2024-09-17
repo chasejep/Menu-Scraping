@@ -840,31 +840,7 @@
 							"script": {
 								"id": "61220876-549f-403e-b9a9-cc3c8ae31513",
 								"exec": [
-									"// Update leafly_remainingProductCount",
-									"let remainingProductCount = pm.collectionVariables.get('leafly_remainingProductCount');",
-									"remainingProductCount = parseInt(remainingProductCount);",
-									"let newRemainingProductCount = remainingProductCount - 60;",
-									"newRemainingProductCount = newRemainingProductCount < 0 ? 0 : newRemainingProductCount;",
-									"pm.collectionVariables.set('leafly_remainingProductCount', newRemainingProductCount);",
-									"",
-									"",
-									"// Add response to leaflys_collectionResponses variable",
-									"let responses = pm.collectionVariables.get('leafly_collectionResponses');",
-									"if(responses) {",
-									"  responses = JSON.parse(responses);",
-									"} else {",
-									"  responses = [];",
-									"}",
-									"responses.push(pm.response.json());",
-									"pm.collectionVariables.set('leafly_collectionResponses', JSON.stringify(responses));",
-									"",
-									"// Set next request",
-									"if (newRemainingProductCount > 0) {",
-									"    pm.execution.setNextRequest(\"Leafly Menu Products\");",
-									"} else {",
-									"    console.log(\"All products have been fetched.\");",
-									"    pm.execution.setNextRequest(null); // Stop further requests",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -875,20 +851,7 @@
 							"script": {
 								"id": "5809e60b-b963-48dc-b9e1-a21daece248a",
 								"exec": [
-									"// Get the leafly_remainingProductCount",
-									"let remainingProductCount = pm.collectionVariables.get('leafly_remainingProductCount');",
-									"if (remainingProductCount <= 0) {",
-									"    throw new Error(\"No more products to fetch. Stopping request execution.\");",
-									"}",
-									"",
-									"// Get leafly_skipCount",
-									"let skipCount = pm.collectionVariables.get('leafly_skipCount');",
-									"if (!skipCount) {",
-									"    skipCount = 0;",
-									"} else {",
-									"    skipCount += 60; // Increment the skip count by 60",
-									"}",
-									"pm.collectionVariables.set('leafly_skipCount', skipCount);"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -968,7 +931,7 @@
 							}
 						],
 						"url": {
-							"raw": "https://consumer-api.leafly.com/api/dispensaries/v2/dank-colorado---adult-use-/menu_items?take=60&skip=0&sort[0][menu_item_name]=asc",
+							"raw": "https://consumer-api.leafly.com/api/dispensaries/v2/dank-colorado---adult-use-/menu_items?take=60&skip=180&sort[0][menu_item_name]=asc",
 							"protocol": "https",
 							"host": [
 								"consumer-api",
@@ -989,7 +952,7 @@
 								},
 								{
 									"key": "skip",
-									"value": "0"
+									"value": "180"
 								},
 								{
 									"key": "sort[0][menu_item_name]",
